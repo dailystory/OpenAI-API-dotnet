@@ -66,7 +66,7 @@ namespace OpenAI_API
 		public static OpenAIAPI ForAzure(string YourResourceName, string deploymentId, APIAuthentication apiKey = null)
 		{
 			OpenAIAPI api = new OpenAIAPI(apiKey);
-			api.ApiVersion = "2023-05-15";
+			api.ApiVersion = "2023-12-01-preview";
 			api.ApiUrlFormat = $"https://{YourResourceName}.openai.azure.com/openai/deployments/{deploymentId}/" + "{1}?api-version={0}";
 			return api;
 		}

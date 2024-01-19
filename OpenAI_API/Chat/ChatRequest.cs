@@ -16,10 +16,14 @@ namespace OpenAI_API.Chat
 	/// </summary>
 	public class ChatRequest
 	{
-		/// <summary>
-		/// The model to use for this request
-		/// </summary>
-		[JsonProperty("model")]
+
+		[JsonProperty("dataSources")]
+		public IList<ChatDataSource> DataSources { get; set; }
+
+        /// <summary>
+        /// The model to use for this request
+        /// </summary>
+        [JsonProperty("model")]
 		public string Model { get; set; } = OpenAI_API.Models.Model.DefaultChatModel;
 
 		/// <summary>
@@ -175,6 +179,7 @@ namespace OpenAI_API.Chat
 			this.FrequencyPenalty = basedOn.FrequencyPenalty;
 			this.PresencePenalty = basedOn.PresencePenalty;
 			this.LogitBias = basedOn.LogitBias;
+			this.DataSources = basedOn.DataSources;
 		}
 
 		/// <summary>
